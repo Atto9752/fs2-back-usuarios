@@ -26,7 +26,7 @@ public class usuarioService {
         usuarioRepo.deleteById(id);
     }
 
-    public usuario obtenerUsuarioPorId(int id) {
+    public usuario buscarUsuario(int id) {
         return usuarioRepo.findById(id).orElse(null);
     }
 
