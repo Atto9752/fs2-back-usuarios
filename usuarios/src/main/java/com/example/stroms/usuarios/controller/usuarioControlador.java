@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,17 +33,17 @@ public class usuarioControlador {
         return servicio.guardarUsuario(usuario);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete")
     public void eliminarUsuario(@RequestParam int id) {
         servicio.eliminarUsuario(id);
     }
 
-    @GetMapping("/search/{id}")
+    @GetMapping("/search")
     public usuario buscarUsuario(@RequestParam int id) {
         return servicio.buscarUsuario(id);
     }
 
-    @PutMapping("/update/{id}")    
+    @PutMapping("/update")    
     public usuario actualizarUsuario(@RequestParam int id, @RequestBody usuario usuarioActualizado) {
         return servicio.actualizarUsuario(id, usuarioActualizado);
     }

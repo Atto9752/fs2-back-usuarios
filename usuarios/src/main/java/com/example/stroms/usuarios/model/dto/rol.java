@@ -6,10 +6,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "ROLES")
 public class rol {
 
@@ -19,7 +23,7 @@ public class rol {
     private int id;
 
     //nombres del rol como "ADMIN", "USER", etc.
-    @Column(unique = true, nullable = false)
-    private String nombreRol;
+    @Column(name = "NOMBRE_ROL", unique = true, nullable = false)
+    private String nombreRol; // CLIENTE O ADMIN
 
 }
